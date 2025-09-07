@@ -1,0 +1,43 @@
+def perceptron_input(inputs, weights, bias):
+    """
+    Calcula a entrada do perceptron (soma ponderada + bias).
+
+    :param inputs: Lista de valores de entrada
+    :param weights: Lista de pesos correspondentes às entradas
+    :param bias: Valor do bias
+    :return: Valor da soma ponderada + bias
+    """
+    weighted_sum = sum(i * w for i, w in zip(inputs, weights))
+    return weighted_sum + bias
+
+
+def perceptron_output(inputs, weights, bias):
+    """
+    Calcula a saída do perceptron (função de ativação degrau).
+
+    :param inputs: Lista de valores de entrada
+    :param weights: Lista de pesos correspondentes às entradas
+    :param bias: Valor do bias
+    :return: 1 se a entrada >= 0, senão 0
+    """
+    return 1 if perceptron_input(inputs, weights, bias) >= 0 else 0
+
+
+def main():
+    print("Hello, World!")
+    print("This is the main file.")
+
+    # Exemplo de uso
+    inputs = [1, 2, 3]
+    weights = [0.1, 0.2, 0.3]
+    bias = 0.4
+
+    entrada = perceptron_input(inputs, weights, bias)
+    saida = perceptron_output(inputs, weights, bias)
+
+    print("Perceptron input (soma ponderada + bias):", entrada)
+    print("Perceptron output (resultado final):", saida)
+
+
+if __name__ == "__main__":
+    main()
